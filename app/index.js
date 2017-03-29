@@ -1,39 +1,35 @@
 /**
- * Created by carl.hand on 22/03/2017.
+ * Created by carl.hand on 29/03/2017.
  */
 import React from 'react';
-// import { render } from 'react-dom'
-// import { createStore } from 'redux'
-// import { Provider } from 'react-redux'
-import App from './components/App';
-import NavBar from './components/NavBar';
 import ReactDOM from 'react-dom';
-// import reducer from './reducers'
+import App from "../components/App";
+import Button from "../components/Button";
 
 var MyComponent = React.createClass({
 
-    getInitialState: function () {
-       return ({
-           title: 'Heading',
-           defaultTitle: 'Heading'
-       });
+    getInitialState: function() {
+        return {
+            title: "",
+            defaultTitle: true
+        }
     },
 
-    changeName: function(newTitle) {
+    handleChange: function(newTitle) {
         this.setState({
-            title: newTitle
+            title: newTitle,
+            defaultTitle: false
         });
     },
 
-    render: function () {
+    render: function() {
         return (
             <div>
-                <App name={this.state.title} />
-                <NavBar onChange={this.changeName} default={this.state.defaultTitle} />
+                <Button onChange={this.handleChange} />
+                <App title={this.state.title} defaultTitle={this.state.defaultTitle}/>
             </div>
         );
     }
 });
 
-ReactDOM.render(<MyComponent />,
-document.getElementById('app'));
+ReactDOM.render(<MyComponent />, document.getElementById("app"));
