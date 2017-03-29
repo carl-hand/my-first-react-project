@@ -3,13 +3,11 @@
  */
 import React from 'react';
 
-var App = React.createClass({
-   render: function () {
-       var name = this.props.name;
-       return (
-         <h1>{name}</h1>
-       );
-   } 
-});
+function App(props) {
+    var name = props.name;
+    return (
+        <h1>{name}</h1>
+    );
+}
 
 export default App;

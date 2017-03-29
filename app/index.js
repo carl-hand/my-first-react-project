@@ -14,7 +14,8 @@ var MyComponent = React.createClass({
 
     getInitialState: function () {
        return ({
-           title: 'Heading'
+           title: 'Heading',
+           defaultTitle: 'Heading'
        });
     },
 
@@ -28,7 +29,7 @@ var MyComponent = React.createClass({
         return (
             <div>
                 <App name={this.state.title} />
-                <NavBar onChange={this.changeName} />
+                <NavBar onChange={this.changeName} default={this.state.defaultTitle} />
             </div>
         );
     }

@@ -12,7 +12,9 @@ var NavBar = React.createClass({
     render: function() {
         return (
             <div>
-                <button value="Aliens" onChange={this.handleChange}>Aliens</button>
+                <button value="Aliens" onClick={this.handleChange}>Aliens</button>
+                <button value="Predator" onClick={this.handleChange}>Predator</button>
+                <button value={this.props.default} onClick={this.handleChange}>Reset</button>
             </div>
         );
     }
